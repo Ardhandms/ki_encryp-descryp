@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enkripsi-Deskripsi Ardhan</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <div class="navbar"> 
+      <a href="/" class="logo">
+        <img src="./Logo IF.png">
+      </a>
+      
+      <ul class="menu">
+        <li>
+          <a href="./about.html" class="active">Tentang</a>
+        </li>
+      </ul>  
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Enkripsi dan Deskripsi</h1>
+      <form>
+          <label>Plainteks</label>
+            <input type="text" id="plaintext">
+          <label>Key/Kunci</label>
+            <input type="text" id="key">
+              <button onclick="encrypt(event)" class="encrypt-button">Enkripsi</button>
+              <button onclick="decrypt(event)" class="decrypt-button">Deskripsi</button>
+          <label for="ciphertext">Ciphertext:</label>
+            <input type="text" id="ciphertext" readonly>
+          <label for="decryptedtext">Decrypted Text:</label>
+            <input type="text" id="decryptedtext" readonly>
+          <button onclick="clearFields()" class="delete-button">Hapus</button>
+      </form>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+      <script>
+        function encrypt(event) {
+        event.preventDefault();
+        const plaintext = document.getElementById("plaintext").value;
+        const key = document.getElementById("key").value;
+
+        const ciphertext = CryptoJS.AES.encrypt(plaintext, key).toString();
+        document.getElementById("ciphertext").value = ciphertext;
+}
+
+        function decrypt(event) {
+          event.preventDefault();
+          const ciphertext = document.getElementById("ciphertext").value;
+          const key = document.getElementById("key").value;
+
+          const bytes = CryptoJS.AES.decrypt(ciphertext, key);
+          const decryptedText = bytes.toString(CryptoJS.enc.Utf8);
+          document.getElementById("decryptedtext").value = decryptedText;
+        }
+
+        function clearFields() {
+            document.getElementById("plaintext").value = "";
+            document.getElementById("key").value = "";
+            document.getElementById("ciphertext").value = "";
+            document.getElementById("decryptedtext").value = "";
+        }
+      </script>
+  </div>     
+</body>
+</html>
+

@@ -1,0 +1,174 @@
+body {
+	margin: 0 auto;
+  padding: 0 ;
+	font-family: sans-serif;
+	background: #1e73be;
+  height: 100vh;
+}
+.navbar{
+	background: #212121;
+	margin: 0;
+  display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo img {
+  width: 300px; /* Sesuaikan ukuran yang diinginkan */
+  height: auto; /* Agar perbandingan aspek tetap terjaga */
+  padding: 20px;
+}
+
+.menu{
+	margin: 0;
+	display: flex;
+	list-style: none;
+	padding: 0;			
+}
+ 
+.menu li{
+	padding-left: 0;
+	margin-right: 10px;
+}
+ 
+.menu li a{
+	padding:10px;
+	color: white;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.navbar a.active {
+  background-color: #1e73be;
+  color: white;
+}
+
+.container{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  padding: 20px 25px;
+  width: 500px;
+
+  background-color: rgba(255, 255, 255, 255);
+  box-shadow: 0 0 10px rgba(255,255,255,.3);
+}
+.container h1{
+  text-align: center;
+  color: #000000;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #000000;
+}
+.container label{
+  text-align: left;
+  color: #000000;
+}
+.container form input{
+  width: calc(100% - 20px);
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid #000000;
+  color: #000000;
+  font-size: 20px;
+}
+.container form button{
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: none;
+  background-color:#000000;
+  font-size: 18px;
+  color: #fafafa;
+}
+
+.delete-button {
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+  background-color: red;
+}
+
+.encrypt-button,
+.decrypt-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.encrypt-button:hover,
+.decrypt-button:hover {
+    background-color: #fff;
+    color: #007bff;
+}
+
+
+
+column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
